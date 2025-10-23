@@ -25,8 +25,8 @@ const Signup = () => {
         }
 
         try {
-            // 3. Call the backend API
-            const response = await apiClient.post('/users/signup', {
+            // 3. Call the backend API (removed unused 'response' variable)
+            await apiClient.post('/users/signup', {
                 name: name,
                 email: email,
                 password: password
@@ -54,6 +54,7 @@ const Signup = () => {
                     <h1 className="text-3xl font-extrabold text-textPrimary">Create Your Account</h1>
                     <p className="mt-2 text-textSecondary">Join the ShopEase family!</p>
                 </div>
+
                 {/* 4. Connect the handler to the form */}
                 <form className="space-y-6" onSubmit={handleSignup}>
                     <div>
@@ -63,8 +64,8 @@ const Signup = () => {
                             id="name" 
                             className="w-full p-3 text-textPrimary bg-background rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" 
                             placeholder="Dhanush Babu"
-                            value={name} // 5. Bind state to input
-                            onChange={(e) => setName(e.target.value)} // 6. Update state on change
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                             required 
                         />
                     </div>
@@ -96,8 +97,12 @@ const Signup = () => {
                         {loading ? 'Creating Account...' : 'Create Account'}
                     </Button>
                 </form>
+
                 <p className="text-center text-textSecondary">
-                    Already have an account? <Link to="/login" className="font-bold text-primary hover:underline">Log in</Link>
+                    Already have an account?{' '}
+                    <Link to="/login" className="font-bold text-primary hover:underline">
+                        Log in
+                    </Link>
                 </p>
             </div>
         </div>
