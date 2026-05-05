@@ -1,0 +1,185 @@
+/* ─── AUTH PAGES (Login & Register) ─────── */
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0f;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.auth__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+}
+.auth__orb--1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #6C63FF, transparent 70%);
+  top: -200px; left: -200px;
+}
+.auth__orb--2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #10B981, transparent 70%);
+  bottom: -150px; right: -150px;
+}
+
+.auth__card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(18,18,28,0.9);
+  border: 1px solid rgba(108,99,255,0.2);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(108,99,255,0.05);
+  animation: cardIn 0.5s ease;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.auth__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 28px;
+  cursor: pointer;
+  width: fit-content;
+}
+.auth__logo-text span {
+  background: linear-gradient(135deg, #6C63FF, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auth__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.auth__subtitle {
+  color: rgba(153,153,187,0.8);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+}
+
+.auth__error {
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #f87171;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.auth__field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(240,240,255,0.7);
+  letter-spacing: 0.3px;
+}
+.auth__field input,
+.auth__field select {
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.auth__field input:focus,
+.auth__field select:focus {
+  border-color: rgba(108,99,255,0.5);
+  background: rgba(108,99,255,0.06);
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.12);
+}
+.auth__field input::placeholder { color: rgba(153,153,187,0.5); }
+
+.auth__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  background: linear-gradient(135deg, #6C63FF, #5046e5);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 20px rgba(108,99,255,0.35);
+  transition: all 0.3s ease;
+  margin-top: 4px;
+}
+.auth__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(108,99,255,0.5);
+}
+.auth__submit svg { transition: transform 0.2s ease; }
+.auth__submit:hover svg { transform: translateX(4px); }
+
+.auth__switch {
+  text-align: center;
+  color: rgba(153,153,187,0.75);
+  font-size: 0.87rem;
+  margin-top: 20px;
+}
+.auth__switch a {
+  color: #a78bfa;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.auth__switch a:hover { color: #fff; }
+
+.auth__back {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: rgba(153,153,187,0.5);
+}
+.auth__back span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.auth__back span:hover { color: rgba(240,240,255,0.8); }
+
+.auth__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 480px) { .auth__row { grid-template-columns: 1fr; } }
